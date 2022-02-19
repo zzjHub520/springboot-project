@@ -1,4 +1,4 @@
-package com.example.manycase.code;
+package com.example.manycase2.code;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Qualifier;
@@ -8,15 +8,18 @@ import org.springframework.stereotype.Component;
 @Component
 public class Main implements CommandLineRunner {
     @Autowired
+    @Qualifier(value = "dog1")
     private Dog dog1;
+
     @Autowired
+    @Qualifier(value = "dog2")
     private Dog dog2;
 
     @Override
     public void run(String... args) throws Exception {
 
         System.out.println("dog1: "+dog1);
-        dog1.setAge(5);
-        System.out.println("dog2: "+dog2);
+        System.out.println("dog1: "+dog2);
+
     }
 }
