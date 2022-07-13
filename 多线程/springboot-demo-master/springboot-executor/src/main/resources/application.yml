@@ -1,0 +1,5 @@
+spring:
+  application:
+    name: springboot-executor
+  main:
+    allow-bean-definition-overriding: true

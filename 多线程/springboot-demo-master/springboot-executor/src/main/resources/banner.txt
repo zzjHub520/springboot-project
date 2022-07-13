@@ -1,0 +1,3 @@
+${AnsiColor.BRIGHT_RED}Spring Boot: ${spring-boot.formatted-version}
+${AnsiColor.BRIGHT_RED}云深小麦
+${AnsiColor.BRIGHT_RED}springboot-executor

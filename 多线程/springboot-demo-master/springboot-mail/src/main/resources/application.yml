@@ -1,0 +1,25 @@
+spring:
+  application:
+    name: springboot-mail
+  main:
+    allow-bean-definition-overriding: true
+  mail:
+    default-encoding: UTF-8
+    host: smtp.163.com
+    username: owl_email@163.com
+    # 不要填邮箱密码，要填授权码，不然会报错：535 Error: authentication failed
+    password:
+    protocol: smtp
+    properties:
+      mail:
+        smtp:
+          auth: true
+          port: 994 #465或者994
+          starttls:
+            enable: true
+            required: true
+          ssl:
+            enable: true
+      display:
+        sendmail: Javen
+        sendname: Spring Boot Guide Email
