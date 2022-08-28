@@ -27,4 +27,15 @@ public class SessionPool {
             SessionPool.sessions.get(sessionId).getAsyncRemote().sendText(message);
         }
     }
+
+    public static void sendMessage(Map<String, Object> params) {
+        String toUserId = params.get("toUserId").toString();
+        String msg = params.get("msg").toString();
+        String fromUserId = params.get("fromUserId").toString();
+        msg="来自"+fromUserId+"的消息"+msg;
+        Session session = sessions.get(toUserId);
+        if(session!=null){
+            session.getAsyncRemote().sendText(msg);
+        }
+    }
 }

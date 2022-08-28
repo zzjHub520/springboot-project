@@ -1,5 +1,6 @@
 package com.example.websocketchatdemo.config;
 
+import com.alibaba.fastjson.JSONObject;
 import org.springframework.stereotype.Component;
 
 import javax.websocket.OnClose;
@@ -9,6 +10,8 @@ import javax.websocket.Session;
 import javax.websocket.server.PathParam;
 import javax.websocket.server.ServerEndpoint;
 import java.io.IOException;
+import java.util.HashMap;
+import java.util.Map;
 
 //ws://localhost:8071/websocket/A
 @ServerEndpoint(value = "/websocket/{userId}")
@@ -48,6 +51,8 @@ public class WebSocketEndpoint {
      */
     @OnMessage
     public void onMessage(String message,Session session){
-        SessionPool.sendMessage(message);
+//        SessionPool.sendMessage(message);
+        Map<String,Object> params = JSONObject.parseObject(message, new HashMap<String, Object>().getClass());
+        SessionPool.sendMessage(params);
     }
 }
