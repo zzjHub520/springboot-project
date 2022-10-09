@@ -1,0 +1,44 @@
+# 配置端口
+server:
+  port: 8086
+
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/db1?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+  thymeleaf:
+    mode: LEGACYHTML5
+    # 取消模板文件缓存
+    cache: false
+
+  #设定thymeleaf文件路径 默认为src/main/resources/templates
+  freemarker:
+    template-loader-path: classpath:/templates
+
+  #设定静态文件路径，js,css等
+  mvc:
+    static-path-pattern: /static/**
+
+  servlet:
+    multipart:
+      # 设置单个文件大小
+      max-file-size: 200MB
+      # 设置单次请求文件的总大小
+      max-request-size: 200MB
+
+# mybatis-plus相关配置
+mybatis-plus:
+  # xml扫描，多个目录用逗号或者分号分隔（告诉 Mapper 所对应的 XML 文件位置）
+  mapper-locations: classpath*:com/liyh/mapper/xml/*.xml
+  configuration:
+    # 是否开启自动驼峰命名规则映射:从数据库列名到Java属性驼峰命名的类似映射
+    map-underscore-to-camel-case: true
+
+#打印sql，保存到文件
+logging:
+  level:
+    com.liyh.mapper: debug

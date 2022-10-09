@@ -1,0 +1,24 @@
+# 配置端口
+server:
+  port: 8084
+
+spring:
+  # 配置数据源
+  datasource:
+    url: jdbc:mysql://localhost:3306/db1?useSSL=false&serverTimezone=UTC
+    username: root
+    password: root
+    driver-class-name: com.mysql.cj.jdbc.Driver
+
+mybatis:
+  # 配置mapper.xml 文件所在的路径
+  mapper-locations: classpath:mapper/*.xml
+  # 配置映射类所在的路径
+  type-aliases-package: com.liyh.entity
+  # 开启驼峰映射
+  configuration:
+    map-underscore-to-camel-case: true
+#打印sql
+logging:
+  level:
+    com.liyh.mapper: debug

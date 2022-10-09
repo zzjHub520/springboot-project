@@ -1,0 +1,8 @@
+# 配置端口
+server:
+  port: 8082
+
+#打印sql
+logging:
+  level:
+    com.mapper: debug

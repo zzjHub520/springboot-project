@@ -1,0 +1,20 @@
+spring:
+  application:
+    name: springboot-nacos
+  profiles:
+    active: dev
+  cloud:
+    nacos:
+      config:
+        # 配置中心的地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件prefix
+        prefix: ${spring.application.name}
+        # 配置文件的格式
+        file-extension: yaml
+        # 配置文件的环境
+        group: DEFAULT_GROUP
+        # 命名空间
+        namespace:
+server:
+  port: 8090

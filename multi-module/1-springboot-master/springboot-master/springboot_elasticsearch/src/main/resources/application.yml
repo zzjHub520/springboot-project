@@ -1,0 +1,8 @@
+# ÅäÖÃ¶Ë¿Ú
+server:
+  port: 8083
+# ÈÕÖ¾
+logging:
+  level:
+    com.liyh.controller: debug
+

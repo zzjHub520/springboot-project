@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyh.mapper.ExcelMapper">
+
+    <!-- 通用查询映射结果 -->
+    <resultMap id="projectItemResultMap" type="com.liyh.entity.ProjectItem">
+        <id column="id" property="id"/>
+        <result column="order_number" property="orderNumber"/>
+        <result column="name" property="name"/>
+        <result column="content" property="content"/>
+        <result column="type" property="type"/>
+        <result column="unit" property="unit"/>
+        <result column="price" property="price"/>
+        <result column="count" property="count"/>
+        <result column="is_deleted" property="isDeleted"/>
+    </resultMap>
+
+    <insert id="insertProjectItem">
+        insert into project_item (order_number,name,content,type,unit,price,count)
+        values(#{orderNumber},#{name},#{content},#{type},#{unit},#{price},#{count})
+    </insert>
+
+</mapper>

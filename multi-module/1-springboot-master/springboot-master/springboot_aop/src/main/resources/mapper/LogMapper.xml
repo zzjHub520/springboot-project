@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.liyh.mapper.LogMapper">
+
+    <select id="query" resultType="com.liyh.entity.User">
+        select * from t_user where id = #{id}
+    </select>
+
+    <insert id="saveUserLog">
+        insert into log_user
+        values (#{requestId},#{methodName},#{methodClass},#{requestUrl},#{remoteIp})
+    </insert>
+
+    <insert id="saveSqlLog">
+        insert into log_sql
+        values (#{requestId},#{sql},#{methodName},#{methodClass},#{requestUrl},#{remoteIp},#{loadTime})
+    </insert>
+
+    <insert id="saveExceptionLog">
+        insert into log_exception
+        values (#{requestId},#{methodName},#{methodClass},#{requestUrl},#{message},#{remoteIp})
+    </insert>
+
+</mapper>

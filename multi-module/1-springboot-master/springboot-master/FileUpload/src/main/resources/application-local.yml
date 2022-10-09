@@ -1,0 +1,27 @@
+server:
+  port: 8081
+  tomcat:
+    connection-timeout: 30000
+
+spring:
+  application:
+    name: FileUpload
+  servlet:
+    multipart:
+#      enabled: true #是否启用http上传处理
+      max-request-size: 100MB #最大请求文件的大小
+      max-file-size: 200MB #设置单个文件最大长度
+      file-size-threshold: 20MB #当文件达到多少时进行磁盘写入
+  mvc:
+    # 自定义404
+    #出现错误时, 直接抛出异常
+    throw-exception-if-no-handler-found: true
+#  resources:
+#    #不要为我们工程中的资源文件建立映射
+#    add-mappings: false
+
+
+# 项目相关配置
+file:
+  # 文件路径 示例（ Windows配置D:/innospace/uploadPath，Linux配置 /home/innospace/uploadPath）
+  profile: D:/testImage/uploadPath

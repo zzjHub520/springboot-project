@@ -1,0 +1,8 @@
+spring:
+  profiles:
+    active: local
+  main:
+    allow-bean-definition-overriding: true
+server:
+  servlet:
+    context-path: /
